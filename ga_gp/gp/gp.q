@@ -1,4 +1,4 @@
-gp_census:delete from enlist`gen`fit`tree`depth`hit!()
+gp_census:flip`gen`fit`tree`depth`hit!()
 gp_bestof:update best:(),avfit:(),avdepth:(),diverse:()from select by seed:0N,run:0N,gen from gp_census
 
 UNBOUNDED:(0n;0w)               / closure on fns set for %,log 0. p.82
