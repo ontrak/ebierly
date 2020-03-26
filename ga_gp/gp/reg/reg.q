@@ -11,7 +11,7 @@ browseStep:{[hitseed]
  if[not count select from gp_bestof where hit,seed=hitseed;:()];
  g:count select from gp_bestof where seed=hitseed;
  h:("<html>";"<head>";"<META HTTP-EQUIV=\"refresh\" CONTENT=\"1\">";"<script type=\"text/javascript\" src=\"http://www.google.com/jsapi\"></script>";"<script type=\"text/javascript\">";"google.load(\"visualization\",\"1\",{packages:[\"scatterchart\"]});";"google.setOnLoadCallback(drawChart);";"function drawChart(){";"var data=new google.visualization.DataTable();";"data.addColumn('number','X');";"data.addColumn('number','Y');";"data.addColumn('number','f');";"data.addRows(",string[count X],");");
- c:{("var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));";"chart.draw(data,{width:800,height:480,titleX:'",x,"',legend:'none',lineSize:1});}")}"{sum x xexp 4 3 2 1}each X";
+ c:{("var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));";"chart.draw(data,{width:800,height:480,titleX:'",x,"',legend:'none',lineSize:1});}")}last view`Y;
  f:("</script>";"</head>";"<body>";"<div id=\"chart_div\"></div>";"</body>";"</html>");
  d:{n:count x;"data.setValue(",/:(","sv'string flip(where n#3;(n*3)#0 1 2;raze flip(x;y;z))),\:");"}[X;Y;Y];
  p:raze(h;d;c;f);
